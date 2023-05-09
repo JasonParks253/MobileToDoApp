@@ -1,13 +1,42 @@
 import { Input, Card, ListItem, Button, Icon } from 'react-native-elements';
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
-import onSubmitTask from './onSubmitTask';
+import { useSelector, useDispatch } from 'react-redux';
 
-export const Display = () => {
+const onSubmitTask = () => {
+    const dispatch = useDispatch();
+
+    const newTask = {
+        task
+    };
+    dispatch(submitTask(newTask))
+    console.log('Button pushed');
+};
+
+
+export const Display = ({ navigation }) => {
     const [task, setTask] = useState('');
 
     return (
         <View>
+            <Card>
+                <View style={{margin: 10}}>
+                    <Icon 
+                        type='font-awesome'
+                        name='group'
+                        size={50}
+                        onPress={() => navigation.navigate('Contact')}
+                    />
+                </View>
+                <View style={{margin: 10}}>
+                    <Icon 
+                        type='font-awesome'
+                        name='cube'
+                        size={50}
+                        onPress={() => navigation.navigate('Details')}
+                    />
+                </View>
+            </Card>
             <Card>
                 <Card.Title>Orginize yourself...</Card.Title>
                 <Card.Divider />
@@ -39,19 +68,12 @@ export const Display = () => {
                     }}
                     raised
                     onPress={() => {
-                        onSubmitTask();
+                        onSubmitTask(task);
                         console.log('button pushed')
                     }}
                 />
             </Card>
-            <Button
-                title='Contact'
-                onPress={() => navigation.navigate('Contact')}
-            />
-             <Button
-                title='Details'
-                onPress={() => navigation.navigate('Details')}
-            />
+            
         </View>
     )
 };

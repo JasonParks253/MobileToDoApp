@@ -8,24 +8,29 @@ import { Input, Card, ListItem, Button, Icon } from 'react-native-elements';
 
 const Contact = ({ navigation }) => {
   return (
-      <Veiw>
-          <Text>Hello, please contact me at the following...</Text>
-          <Button
-          title='Home'
-          onPress={() => navigation.navigate({name: 'Home'})}
-          />
-      </Veiw>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Hello, please contact me at the following...</Text>
+      <Card>
+          <Card.Title>
+              Contact Info
+          </Card.Title>
+          <Card.Divider />
+          <Text>jskate@gmail.com</Text>
+      </Card>
+  </View>
   )
 };
 
 const DetailsScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button
-          title='Home'
-          onPress={() => navigation.navigate({name: 'Home'})}
-          />
+      <Icon
+        name='sc-telegram'
+        type='evilicon'
+        color='#517fa4'
+        size={130}
+        onPress={() => console.log('hello')}
+      />
     </View>
   );
 }
