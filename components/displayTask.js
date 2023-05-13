@@ -9,7 +9,7 @@ const onSubmitTask = () => {
     const newTask = {
         task
     };
-    dispatch(submitTask(newTask))
+    dispatch(onSubmitTask(newTask))
     console.log('Button pushed');
 };
 
@@ -37,7 +37,7 @@ export const Display = ({ navigation }) => {
                     />
                 </View>
             </Card>
-            <Card>
+            <Card style={styles.cardRow}>
                 <Card.Title>Orginize yourself...</Card.Title>
                 <Card.Divider />
                 <Text>Add Your Task:</Text>
@@ -48,7 +48,7 @@ export const Display = ({ navigation }) => {
                         name: 'pencil'
                     }}
                 />
-                <Button 
+                <Button style={styles.Button}
                     title={'Click to Submit'}
                     containerStyle={{
                         width: 200,
@@ -78,5 +78,13 @@ export const Display = ({ navigation }) => {
     )
 };
 
-
+const styles = StyleSheet.create({
+    Button: {
+        backgroundColor: 'green',
+        color: 'green'
+    },
+    cardRow: {
+        backgroundColor: 'tan'
+    }
+})
 export default Display;
