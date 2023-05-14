@@ -19,24 +19,6 @@ export const Display = ({ navigation }) => {
 
     return (
         <View>
-            <Card>
-                <View style={{margin: 10}}>
-                    <Icon 
-                        type='font-awesome'
-                        name='group'
-                        size={50}
-                        onPress={() => navigation.navigate('Contact')}
-                    />
-                </View>
-                <View style={{margin: 10}}>
-                    <Icon 
-                        type='font-awesome'
-                        name='cube'
-                        size={50}
-                        onPress={() => navigation.navigate('Details')}
-                    />
-                </View>
-            </Card>
             <Card style={styles.cardRow}>
                 <Card.Title>Orginize yourself...</Card.Title>
                 <Card.Divider />
@@ -73,7 +55,6 @@ export const Display = ({ navigation }) => {
                     }}
                 />
             </Card>
-            
         </View>
     )
 };
