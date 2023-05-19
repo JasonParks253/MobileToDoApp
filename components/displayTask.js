@@ -3,65 +3,67 @@ import { StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-const onSubmitTask = () => {
-    const dispatch = useDispatch();
-
-    const newTask = {
-        task
-    };
-    dispatch(onSubmitTask(newTask))
-    console.log('Button pushed');
-};
-
 
 export const Display = ({ navigation }) => {
     const [task, setTask] = useState('');
 
+    const onSubmitTask = () => {
+        setTask('hello')
+        return (
+            <Card>
+                {setTask}
+            </Card>
+        )
+    };
+
     return (
-        <View>
+        <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#12C6B5' }}>
             <Card style={styles.cardRow}>
                 <Card.Title>Orginize yourself...</Card.Title>
                 <Card.Divider />
                 <Text>Add Your Task:</Text>
                 <Input 
-                    placeholder='Enter Task'
+                    placeholder='Enter Task...'
                     leftIcon={{ 
                         type: 'font-awesome',
-                        name: 'pencil'
+                        name: 'pencil',
+                        marginRight: 10,
+                        color: 'orange'
                     }}
+                    
                 />
-                <Button style={styles.Button}
-                    title={'Click to Submit'}
+                <Button 
+                    title={'Add'}
                     containerStyle={{
                         width: 200,
                         marginHorizontal: 50,
                         marginVertical: 10,
                     }}
                     icon={{
-                        name: 'arrow-right',
+                        name: 'plus',
                         type: 'font-awesome',
                         size: 15,
                         color: 'white',
                     }}
-                    iconRight
+                    iconLeft
                     iconContainerStyle={{
-                        marginLeft: 10,
-                        marginRight: -10
+                        marginLeft: -10,
+                        marginRight: 10
                     }}
                     raised
                     onPress={() => {
-                        onSubmitTask(task);
+                        onSubmitTask();
                         console.log('button pushed')
                     }}
                 />
             </Card>
+            <Text>{task}</Text>
         </View>
     )
 };
 
 const styles = StyleSheet.create({
     Button: {
-        backgroundColor: 'green',
         color: 'green'
     },
     cardRow: {
