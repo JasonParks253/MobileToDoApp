@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export const Contact = ({ navigation }) => {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#12C6B5' }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#085F9B' }}>
         <Text>Hello, please contact me at the following...</Text>
         <Card style={styles.card}>
             <Card.Title>

@@ -16,7 +16,7 @@ export const HomeScreen = ({ navigation }) => {
       };
 
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#12C6B5' }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#085F9B' }}>
         <Text style={styles.title} onPress={onPressTitle}>{titleText}</Text>
         <Image 
            style={styles.logo}

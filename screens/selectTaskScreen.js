@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export const Details = ({ navigation }) => {
     return (
-      <View style={{ flex: 1, alignItems: 'center',backgroundColor: '#12C6B5' }}>
+      <View style={{ flex: 1, alignItems: 'center',backgroundColor: '#085F9B' }}>
         <View style={{ alignItems: 'center', marginTop: 30, paddingTop: 30 }}>
             <Icon
             name='sc-telegram'
